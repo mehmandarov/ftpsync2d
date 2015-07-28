@@ -12,13 +12,13 @@ You can download the python script ftpsync.py from here. For installation, just 
 
 To learn about the options of the ftpsync.py script, run
 
-```
+```console
 sh> ftpsync.py --help
 ```
 
 that will display
 
-```
+```console
 Usage: ftpsync.py [options] <remote path> <local path>
 
  ftpsync.py is tool to synchronize remote and local directory trees using FTP
@@ -44,7 +44,7 @@ Options:
 
 For example, to syncronize remote directory rdir in the FTP server ftp.example.com with the local directory ldir, run
 
-```
+```console
 ftpsync.py ftp://ftp.example.com/rdir ldir --download
 ```
 
