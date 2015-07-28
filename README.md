@@ -57,5 +57,8 @@ Before using ftpsync.py, backing up data is highly recommended.
 
 Bug reports and feature requests should be reported to ftpsync2d issues.
 
+##License
+[New BSD License](http://opensource.org/licenses/BSD-3-Clause)
+
 ##Credits
 Originally developed by Pearu Peterson. Exported from http://code.google.com/p/ftpsync2d with permission.
