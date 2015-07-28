@@ -7,11 +7,12 @@ In both usage cases, the tool requires write access to FTP server to create .lis
 ##Download and installation
 
 You can download the python script ftpsync.py from here. For installation, just copy the file to a directory that is in the PATH environment variable and make it executable (eg chmod +x ftpsync.py).
-Usage
+
+##Usage
 
 To learn about the options of the ftpsync.py script, run
 
-```bash
+```
 sh> ftpsync.py --help
 ```
 
@@ -43,7 +44,7 @@ Options:
 
 For example, to syncronize remote directory rdir in the FTP server ftp.example.com with the local directory ldir, run
 
-```bash
+```
 ftpsync.py ftp://ftp.example.com/rdir ldir --download
 ```
 
