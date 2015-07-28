@@ -3,13 +3,14 @@
 
 For usage information, run ``ftpsync.py --help``.
 
-Homepage: http://ftpsync2d.googlecode.com
+Homepage: https://github.com/mehmandarov/ftpsync2d
 """
 # Author: Pearu Peterson
 # Created: April 2008
+# Further development: Rustam Mehmandarov
 # License: BSD
 
-__version__ = '1.1-svn'
+__version__ = '1.2'
 
 import sys
 import time
