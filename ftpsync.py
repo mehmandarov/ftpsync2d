@@ -51,7 +51,7 @@ def fix_dirs(dirs):
 
 class FtpSession(object):
 
-    def __init__(self, server_url, skip_dirs = []):
+    def __init__(self, server_url, skip_dirs = [], export_only=False):
         if not server_url.startswith('ftp://'):
             server_url = 'ftp://' + server_url
         o = urlparse(server_url)
@@ -67,6 +67,7 @@ class FtpSession(object):
         self._ftp = None
         self.clock_offset = 0
         self.skip_dirs = skip_dirs or []
+        self.export_only = export_only
         
     @property
     def server_url(self):
@@ -286,8 +287,7 @@ class FtpSession(object):
         for path in dirs:
             r.update(**self.get_remote_files(path, verbose=verbose, listing=listing,
                                              update_listing=update_listing))
-
-        if listing:
+        if ((not self.export_only) and listing):
             if self.upload_listing_map(wd, r):
                 if verbose:
                     sys.stdout.write('<uploaded %r>\n' % (lstfn))
@@ -602,16 +602,24 @@ Remote path must be given in the following form:
     parser.add_option("-r", "--remove", dest="remove_paths",
                       default=[], action="append",
                       help="remove specified files and directories")
+    parser.add_option("-e", "--export", dest="export_only",
+                      default=[], action="store_true",
+                      help="only file export, no .listing files; will override all functions modifying or creating .listing files")
     
     (options, args) = parser.parse_args()
     if len(args)!=2:
         parser.error("incorrect number of arguments")
+
+    export_only = False
+    if options.export_only:
+        export_only = True
 
     start_time = time.time()
     remote_path, local_path = args
     local_files = get_local_files(local_path)
     
     session = FtpSession(remote_path)
+    session.export_only = export_only
     session.skip_dirs.extend(options.skip_path)
     remote_files = session.get_files(update_listing=options.update_listing)
     
@@ -674,7 +682,6 @@ Remote path must be given in the following form:
             print "Skipping downloading",n,"files (see --download option):"
             for filename in download_list:
                 print filename
-
 
     uploaded_files = 0
     if options.upload_files:

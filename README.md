@@ -40,6 +40,8 @@ Options:
   -l, --listing         update remote .listing files
   -r REMOVE_PATHS, --remove=REMOVE_PATHS
                         remove specified files and directories
+  -e, --export          only file export, no .listing files; will override all
+                        functions modifying or creating .listing files
 ```
 
 For example, to syncronize remote directory rdir in the FTP server ftp.example.com with the local directory ldir, run
