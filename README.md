@@ -1,8 +1,8 @@
 #ftpsync2d
 
-This project provides a tool to synchronize remote FTP and local directory trees in both directions. The tool is provided as a Python script (ftpsync.py) that can be useful for uploading new/modified files to a homepage host using FTP. The tool can also be used to download new/modified files (such as wiki pages) for backup or mirroring purposes.
+This project provides a tool to synchronize remote FTP and local directory trees in both directions. The tool is provided as a Python script (```ftpsync.py```) that can be useful for uploading new/modified files to a homepage host using FTP. The tool can also be used to download new/modified files (such as wiki pages) for backup or mirroring purposes.
 
-In both usage cases, the tool requires write access to FTP server to create .listing files that are used to accelerate the synchronization process.
+In both usage cases, the tool requires write access to FTP server to create ```.listing``` files that are used to accelerate the synchronization process. It is also possible to use ```--export``` option to upload files to remote directory without ```.listing``` files.
 
 ##Download and installation
 
@@ -45,7 +45,7 @@ Options:
                         functions modifying or creating .listing files
 ```
 
-For example, to syncronize remote directory rdir in the FTP server ```ftp.example.com``` with the local directory ldir, run
+For example, to syncronize remote directory ```rdir``` in the FTP server ```ftp.example.com``` with the local directory ```ldir```, run
 
 ```console
 ftpsync.py ftp://ftp.example.com/rdir ldir --download
@@ -53,13 +53,13 @@ ftpsync.py ftp://ftp.example.com/rdir ldir --download
 
 When username and password is required, the script will ask. When there are files that are changed locally and should be uploaded, add ```--upload``` option to the command line.
 
-###Important note
+####Important note
 
-Before using ftpsync.py, backing up data is highly recommended.
+Before using ```ftpsync.py```, backing up data is highly recommended.
 
 ##Feedback
 
-Bug reports and feature requests should be reported to ftpsync2d issues.
+Bug reports and feature requests should be reported to [ftpsync2d issues](https://github.com/mehmandarov/ftpsync2d/issues).
 
 ##License
 [New BSD License](http://opensource.org/licenses/BSD-3-Clause)
