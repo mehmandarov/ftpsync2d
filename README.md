@@ -2,7 +2,7 @@
 
 This project provides a tool to synchronize remote FTP and local directory trees in both directions. The tool is provided as a Python script (```ftpsync.py```) that can be useful for uploading new/modified files to a homepage host using FTP. The tool can also be used to download new/modified files (such as wiki pages) for backup or mirroring purposes.
 
-In both usage cases, the tool requires write access to FTP server to create ```.listing``` files that are used to accelerate the synchronization process. It is also possible to use ```--export``` option to upload files to remote directory without ```.listing``` files.
+In both usage cases, the tool requires write access to FTP server to create ```.listing``` files that are used to accelerate the synchronization process. It is also possible to export files to a remote directory without ```.listing``` files.
 
 ##Download and installation
 
