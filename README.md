@@ -6,11 +6,12 @@ In both usage cases, the tool requires write access to FTP server to create .lis
 
 ##Download and installation
 
-You can download the python script ftpsync.py from here. For installation, just copy the file to a directory that is in the PATH environment variable and make it executable (eg chmod +x ftpsync.py).
+You can download the python script ```ftpsync.py``` from here. 
+For installation, just copy the file to a directory that is in the PATH environment variable and make it executable (e.g. ```chmod +x ftpsync.py```).
 
 ##Usage
 
-To learn about the options of the ftpsync.py script, run
+To learn about the options of the ```ftpsync.py``` script, run
 
 ```console
 sh> ftpsync.py --help
@@ -44,14 +45,15 @@ Options:
                         functions modifying or creating .listing files
 ```
 
-For example, to syncronize remote directory rdir in the FTP server ftp.example.com with the local directory ldir, run
+For example, to syncronize remote directory rdir in the FTP server ```ftp.example.com``` with the local directory ldir, run
 
 ```console
 ftpsync.py ftp://ftp.example.com/rdir ldir --download
 ```
 
-When username and password is required, the script will ask. When there are files that are changed locally and should be uploaded, add --upload option to the command line.
-Important note
+When username and password is required, the script will ask. When there are files that are changed locally and should be uploaded, add ```--upload``` option to the command line.
+
+###Important note
 
 Before using ftpsync.py, backing up data is highly recommended.
 
